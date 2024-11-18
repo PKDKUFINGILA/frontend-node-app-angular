@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {faPhoneVolume} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'node-footer',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-
+  faPhoneVolume = faPhoneVolume;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,1 +1,78 @@
-<p>header works!</p>
+<!-- header start -->
+<header>
+  <!-- header top start -->
+  <div class="header-top theme1 bg-dark py-15">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-7 order-last order-xl-first AREVOIR">
+          <div class="static-info text-center AREVOIR">
+            <p class="text-white">Join our showroom and get <span class="text-danger">10% off</span>!Coupon code : <span class="text-danger">August 2024</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-5">
+          <nav class="navbar-top pb-2 pb-md-0 position AREVOIR">
+            <ul class="d-flex justify-content-center">
+              <li>
+                <a href="#" id="dropdown1 AREVOIR" >
+                  <ul class="topnav-submenu AREVOIR">
+                    <li><a href="#">My account</a></li>
+                    <li><a href="#">Checkout</a></li>
+                  </ul>
+                </a>
+              </li>
+              <li>
+                <a href="#" id="dropdown2 AREVOIR" >
+                  <ul class="topnav-submenu AREVOIR">
+                    <li><a href="#">USD</a></li>
+                    <li><a href="#">CDF</a></li>
+                  </ul>
+                </a>
+              </li>
+              <li>
+                <a href="#" id="dropdown3 AREVOIR" >
+                  <ul class="topnav-submenu AREVOIR">
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">French</a></li>
+                  </ul>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-menu d-flex">
+    <div class="logo flex-1 pb-4 d-flex justify-content-end mt-2">
+      <a href="index.html">
+        <img src="/assets/img/logo.png" alt="Logo Jstore">
+      </a>
+    </div>
+    <nav class="flex-3 d-flex align-items-end ps-5" >
+      <ul class="d-flex gap-4">
+        <li routerLinkActive="active"><a routerLink="/">Home</a></li>
+        <li routerLinkActive="active"><a routerLink="/shop">Shop</a></li>
+        <li routerLinkActive="active"><a routerLink="/add-product">Add Product</a></li>
+        <li routerLinkActive="active"><a routerLink="/signin">Login</a></li>
+        <li routerLinkActive="active"><a routerLink="/signup">Register</a></li>
+        <li routerLinkActive="active"><a href="">Logout</a></li>
+      </ul>
+    </nav>
+    <div class="header-menu-right flex-1 d-flex align-items-center gap-4 mt-2">
+
+      <div class="d-flex align-items-center gap-2">
+        <fa-icon [icon]="faPhoneVolume" class="text-dark fs-4"></fa-icon>
+        <div class=" d-flex flex-column lh-1">
+          <p class="mb-0">Call us :</p>
+          <a href="" class="link-underline-light color-noir-fonce fw-bold">(+33)752152560</a>
+        </div>
+      </div>
+      <div>
+        <fa-icon [icon]="faWeightHanging" class="text-dark fs-4"></fa-icon>
+        <a href="" class="link-underline-light color-noir-fonce fw-bold">$199</a>
+      </div>
+    </div>
+  </div>
+</header>

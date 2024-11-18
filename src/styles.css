@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+  color: #8c8e8e;
+  font-size: 15px;
+}
+.flex-1{
+  flex: 1;
+}
+.flex-2{
+  flex: 2;
+}
+.flex-3{
+  flex: 3;
+}
+.flex-4{
+  flex: 4;
+}
+.flex-5{
+  flex: 5;
+}
+.width-20{
+  width: 20%;
+}
+.width-25{
+  width: 25%;
+}
+.width-35{
+  width: 35%;
+}
+.width-40{
+  width: 40%;
+}
+.width-60{
+  width: 60%;
+}
+.width-65{
+  width: 65%;
+}
+.width-80{
+  width: 80%;
+}
+.color-noir-fonce{
+  color: #5e5656;
+}
+.bg-beige-css{
+  background-color: #e4e4d975;
+}
+.bg-gray-css{
+  background-color: #b4aeae41
+}
+.color-dark{
+  color: #d13443;
+}

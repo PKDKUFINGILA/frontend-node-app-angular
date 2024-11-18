@@ -14,9 +14,7 @@ import { HeaderComponent } from './components/partials/header/header.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 import { HeaderPageComponent } from './components/partials/header-page/header-page.component';
-import { QuickViewModalComponent } from './components/modal/quick-view-modal/quick-view-modal.component';
-import { AddToCartModalComponent } from './components/modal/add-to-cart-modal/add-to-cart-modal.component';
-import { DeleteProductModalComponent } from './components/modal/delete-product-modal/delete-product-modal.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -31,14 +29,12 @@ import { DeleteProductModalComponent } from './components/modal/delete-product-m
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
-    HeaderPageComponent,
-    QuickViewModalComponent,
-    AddToCartModalComponent,
-    DeleteProductModalComponent
+    HeaderPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

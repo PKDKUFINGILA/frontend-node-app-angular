@@ -1,0 +1,33 @@
+.header-menu{
+  height: 90px;
+}
+/* Header center*/
+.header-menu nav ul li{
+  list-style: none;
+}
+.header-menu nav ul li a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #5e5656;
+  font-weight: bold;
+}
+.header-menu nav ul li a:hover{
+  color: #d13443;
+}
+/*.active{
+  color: #d13443 important;
+}*/
+/*.header-menu nav ul li a:active{
+  color: #d13443 !important;
+}*/
+
+/* Header Right*/
+.header-menu-right{
+  height: 40px;
+}
+.height-10{
+  height: 75px
+}
+/*fa-icon{
+  font-size: 25px;
+}*/
