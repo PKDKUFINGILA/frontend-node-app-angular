@@ -1,0 +1,23 @@
+.pt-80{
+  padding-top: 80px;
+}
+.pb-80{
+  padding-bottom: 80px;
+}
+.mb-30{
+  margin-bottom: 30px;
+}
+.pb-25{
+  padding-bottom: 25px;
+}
+.title{
+  border-bottom: 1px solid #e4e4d975;
+}
+.personal-information{
+  border: 1px solid #e4e4d975;
+  padding: 25px 15px;
+}
+.signup-submit:hover{
+  background-color: #d13443;
+  border: #d13443;
+}

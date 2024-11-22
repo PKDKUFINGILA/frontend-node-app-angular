@@ -52,3 +52,6 @@ body{
 .color-dark{
   color: #d13443;
 }
+.active{
+  color: #d13443 !important;
+}

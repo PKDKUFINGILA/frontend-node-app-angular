@@ -55,9 +55,9 @@
         <li routerLinkActive="active"><a routerLink="/">Home</a></li>
         <li routerLinkActive="active"><a routerLink="/shop">Shop</a></li>
         <li routerLinkActive="active"><a routerLink="/add-product">Add Product</a></li>
-        <li routerLinkActive="active"><a routerLink="/signin">Login</a></li>
-        <li routerLinkActive="active"><a routerLink="/signup">Register</a></li>
-        <li routerLinkActive="active"><a href="">Logout</a></li>
+        <li routerLinkActive="active" *ngIf="!isAuth"><a routerLink="/signin">Login</a></li>
+        <li routerLinkActive="active" *ngIf="!isAuth"><a routerLink="/signup">Register</a></li>
+        <li routerLinkActive="active"><a style="cursor: pointer;" *ngIf="isAuth" (click)="logout()">Logout</a></li>
       </ul>
     </nav>
     <div class="header-menu-right flex-1 d-flex align-items-center gap-4 mt-2">

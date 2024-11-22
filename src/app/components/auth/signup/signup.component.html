@@ -1,1 +1,49 @@
-<p>signup works!</p>
+<node-header-page page="Register"></node-header-page>
+<div class="register pt-80 pb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="title text-capitalize mb-30 pb-25 text-dark">Create an account</h3>
+        <div class="log-in-form">
+          <form action="" class="personal-information" [formGroup]="signupForm">
+            <div class="alert alert-danger" *ngIf="errorMessage">{{ 'Email or Password Invalid' }}</div>
+            <div class="order-asguest theme1 mb-3">
+              <span>Already have an account ?</span>
+              <a class="text-body-secondary text-decoration-none" routerLink="/signin"> Log in instead!</a>
+            </div>
+
+            <div class="form-group row pb-3">
+              <label for="email" class="col-md-3 col-form-label text-dark">Email</label>
+              <div class="col-md-6">
+                <input type="email" id="email" formControlName="email" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="password" class="col-md-3 col-form-label text-dark">Password</label>
+              <div class="col-md-6">
+                <div class="input-group mb-2 mr-sm-2">
+                  <input type="password" class="form-control" formControlName="password" id="password" aria-label="Recipient's password" aria-describedby="password1">
+                  <button class="btn btn-dark" type="button" id="password1">Show</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group row pb-3 pt-3 text-center">
+              <div class="col-md-6 offset-md-3">
+                <div class="col-md-6 offset-md-3">
+                  <div class="login-form-links">
+                    <div class="sign-btn">
+                      <button class="btn btn-dark signup-submit" [disabled]="signupForm.invalid" (click)="onSubmit()">Sign up</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
