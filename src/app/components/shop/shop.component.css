@@ -1,0 +1,26 @@
+.mb-30{
+  margin-bottom: 30px;
+}
+.product-price{
+  color: #000 !important;
+}
+.pro-btn{
+  padding: 2px 5px;
+  border-radius: 12px;
+  border: solid 1px #f4f4eed3;
+  background-color: #f4f4eed3 !important;
+}
+.top-left{
+  top: 25px !important;
+  left: 210px !important;
+}
+.card{
+  border: none;
+  transition: box-shadow 0.3s ease;
+}
+.card:hover{
+  box-shadow: 0 4px 15px rgba(214, 217, 220, 0.5);
+}
+.height-img{
+  height: 250px;
+}

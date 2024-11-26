@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SigninComponent implements OnInit {
   signinForm!: FormGroup;
   errorMessage: string = '';
+  loading: boolean = false;
 
   constructor(private formBuilder: FormBuilder,
     private router: Router,
@@ -25,6 +26,7 @@ export class SigninComponent implements OnInit {
 
   //Get values form
   onSubmit() {
+    this.loading = true;
     const emailControl = this.signinForm.get('email');
     const passwordControl = this.signinForm.get('password');
 
@@ -34,9 +36,11 @@ export class SigninComponent implements OnInit {
 
       this.auth.signin(email, password)
         .then(() => {
+          this.loading = false;
           this.router.navigate(['/shop']);
         })
         .catch((err) => {
+          this.loading = false;
           this.errorMessage = err.message ? err.message : 'Une erreur est survenue lors de la connexion.';
         });
     } else {

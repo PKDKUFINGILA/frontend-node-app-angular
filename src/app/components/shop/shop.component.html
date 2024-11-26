@@ -1,1 +1,43 @@
-<p>shop works!</p>
+<node-header-page page="Shop"></node-header-page>
+<mat-spinner style="margin-bottom: 300px;" class="container text-center" *ngIf="!loading"></mat-spinner>
+<div class="tab-content container" id="pills-tabContent" *ngIf="loading">
+  <div class="tab-pane fade show active row d-flex" id="pills-home" role="tabpanel" aria-labelledby="pills-home">
+    <div class="col-sm-6 col-md-4 mb-30" *ngFor="let product of products">
+      <div class="card" id="cardProduct" style="width: 18rem;">
+        <div class="card-body">
+          <div class="product-thumbnail position-relative">
+            <span class="badge bg-danger rounded-pill position-relative top-left">New</span>
+            <a>
+              <img width="420" [src]="product.image" class="first-img img-fluid height-img" alt="thumbnail">
+            </a>
+            <!-- Product links-->
+            <ul class="product-links d-flex justify-content-center">
+              <li>
+                <a href="#" data-toggle="modal" data-target="#quick-view">
+                  <span data-toggle="tooltip" data-placement="bottom" title="Quick view"></span>
+                </a>
+              </li>
+            </ul>
+            <!-- Product links end -->
+          </div>
+          <div class="py-0">
+            <h5 class="card-title"><a href="" class="text-decoration-none text-dark">{{ product.name }}</a></h5>
+            <div class="star-rating d-flex">
+              <div class="ion-ios-star"></div>
+              <div class="ion-ios-star"></div>
+              <div class="ion-ios-star"></div>
+              <div class="ion-ios-star"></div>
+              <div class="ion-ios-star de-selected"></div>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+              <h6 class="product-price">{{ product.price/100 | currency: 'EUR' }}</h6>
+              <button class="pro-btn" data-toggle="modal" data-target="#add-to-cart"><fa-icon [icon]="faCartShopping" class=""></fa-icon></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--product list end -->
+    </div>
+  </div>
+</div>
+
