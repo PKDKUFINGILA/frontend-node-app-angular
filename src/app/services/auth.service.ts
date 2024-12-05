@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
   private api = environment.api;
   token: string | null = null;
-  userId: string | null = null;
+  userId!: string;
   isAuth$ = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) {
@@ -70,7 +70,7 @@ export class AuthService {
 
   logout(): void{
     this.isAuth$.next(false);
-    this.userId = null;
+    this.userId = '';
     this.token = null;
     if (typeof localStorage !== "undefined") {
       localStorage.removeItem('auth');

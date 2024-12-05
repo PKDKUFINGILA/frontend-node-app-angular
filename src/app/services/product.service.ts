@@ -23,8 +23,12 @@ export class ProductService {
     this.http.get<Data>(this.api+'/products').subscribe(
       (data: Data)=>{
         if(data.status === 200){
-          this.products = data.result;
-          this.emitProduct();
+          if (Array.isArray(data.result)) {
+            this.products = data.result;
+            this.emitProduct();
+          }else{
+            console.error("la reponse n'est pas un tableau de produits");
+          }
         } else{
           console.log(data);
         }
@@ -35,20 +39,26 @@ export class ProductService {
     )
   }
 
-  getProductById(id: string){
-    this.http.get<Data>(this.api+'/products/'+id).subscribe(
-      (data: Data)=>{
-        if(data.status === 200){
-          this.products = data.result;
-          this.emitProduct()
-        } else{
-          console.log(data);
+  getProductById(id: string): Promise<Product>{
+    return new Promise((resolve, reject)=>{
+      this.http.get<Data>(this.api+'/products/'+id).subscribe(
+        (data: Data)=>{
+          if(data.status === 200){
+            if (typeof data.result === 'object' && !Array.isArray(data.result)) {
+              resolve(data.result as Product)
+            }
+            //resolve(data.result as Product)
+            //this.products = data.result;
+            //this.emitProduct()
+          } else{
+            reject(data.message);
+          }
+        },
+        (err)=>{
+          reject(err);
         }
-      },
-      (err)=>{
-        console.log(err);
-      }
-    )
+      )
+    })
   }
 
   createNewProduct(product: Product, image: File){
@@ -87,10 +97,11 @@ export class ProductService {
           if(data.status === 200){
             resolve(data)
           } else{
-            reject()
+            reject(data.message)
           }
         },
         (err)=>{
+          console.error('erreur lors de la requête : ', err);
           reject(err)
         }
       )

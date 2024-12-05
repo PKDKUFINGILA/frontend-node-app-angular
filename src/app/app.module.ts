@@ -20,7 +20,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import { HomeComponent } from './components/home/home.component';
+import { DeleteProductModalComponent } from './components/partials/modal/delete-product-modal/delete-product-modal.component';
+import { AddToCartModalComponent } from './components/partials/modal/add-to-cart-modal/add-to-cart-modal.component';
+import { QuickViewModalComponent } from './components/partials/modal/quick-view-modal/quick-view-modal.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +38,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
-    HeaderPageComponent
+    HeaderPageComponent,
+    HomeComponent,
+    DeleteProductModalComponent,
+    AddToCartModalComponent,
+    QuickViewModalComponent
   ],
   imports: [
     BrowserModule,

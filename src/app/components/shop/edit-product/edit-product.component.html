@@ -1,1 +1,48 @@
-<p>edit-product works!</p>
+<node-header-page page="Edit Product"></node-header-page>
+
+<mat-spinner style="margin-bottom: 300px;" class="container text-center" *ngIf="loading"></mat-spinner>
+<div *ngIf="!loading" class="col-sm-6 offset-sm-3 mt-2">
+  <div class="row">
+    <div class="col-md-4">
+      <button type="button" (click)="filePicker.click()" class="btn btn-dark m-2">Update Image</button>
+      <input style="display: none;" type="file" #filePicker (change)="onImagePick($event)" class="form-control">
+      <div class="image-preview" *ngIf="imagePreview">
+        <img [src]="imagePreview" class="first-img img-fluid" alt="">
+      </div>
+    </div>
+    <div class="col-md-8">
+
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+        <p class="alert alert-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+        <div class="form-group">
+          <label for="title">Name</label>
+          <input type="text" formControlName="name" name="" id="title" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="price">Price (in €)</label>
+          <input type="number" formControlName="price" class="form-control" id="price" min="5">
+        </div>
+
+        <div class="form-group">
+          <label for="stock">Stock</label>
+          <input type="number" formControlName="stock" class="form-control" id="stock" min="1">
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea name="description"
+                    id="description"
+                    cols="30" rows="7"
+                    class="form-control"
+                    formControlName="description"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-dark m-2 text-uppercase" (click)="onSubmit()" [disabled]="productForm.invalid">Edit Product</button>
+
+      </form>
+    </div>
+  </div>
+</div>

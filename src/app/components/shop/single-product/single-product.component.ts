@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Product } from 'src/app/models/product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'node-single-product',
@@ -6,10 +9,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./single-product.component.css']
 })
 export class SingleProductComponent implements OnInit {
+  product!: Product;
 
-  constructor() { }
+  constructor(private productService: ProductService,
+              private route: ActivatedRoute, // pour traiter l'identifiant du produit
+              private router: Router
+            ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0,0);
+    this.route.params.subscribe(
+      (params: Params)=>{
+        const id = params['id'];
+        this.productService.getProductById(id)
+        .then((product: Product)=>{
+          this.product = product;
+        })
+        .catch((err)=>{
+          this.router.navigate(['/not-found']);
+          console.log(err);
+        })
+      }
+    )
   }
 
 }

@@ -7,9 +7,9 @@
         <div class="card-body">
           <div class="product-thumbnail position-relative">
             <span class="badge bg-danger rounded-pill position-relative top-left">New</span>
-            <a>
-              <img width="420" [src]="product.image" class="first-img img-fluid height-img" alt="thumbnail">
-            </a>
+            <div [routerLink]="['/single-product', product._id]">
+              <img width="420" height="420" [src]="product.image" class="first-img img-fluid height-img" alt="thumbnail">
+            </div>
             <!-- Product links-->
             <ul class="product-links d-flex justify-content-center">
               <li>
@@ -31,8 +31,11 @@
             </div>
             <div class="d-flex align-items-center justify-content-between">
               <h6 class="product-price">{{ product.price/100 | currency: 'EUR' }}</h6>
+              <button class="pro-btn" [routerLink]="['/edit-product', product._id]" *ngIf="userId === product.userId"><fa-icon [icon]="faPenToSquare" class=""></fa-icon></button>
+              <button class="pro-btn" data-bs-toggle="modal" *ngIf="userId === product.userId" [attr.data-bs-target]="'#delete-product-'+product._id"><fa-icon [icon]="faTrash" class=""></fa-icon></button>
               <button class="pro-btn" data-toggle="modal" data-target="#add-to-cart"><fa-icon [icon]="faCartShopping" class=""></fa-icon></button>
             </div>
+            <node-delete-product-modal [product]='product' *ngIf="userId === product.userId"></node-delete-product-modal>
           </div>
         </div>
       </div>
